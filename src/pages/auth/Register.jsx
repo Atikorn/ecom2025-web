@@ -34,6 +34,7 @@ const Register = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(registerSchema),
@@ -74,6 +75,7 @@ const Register = () => {
       const res = await axios.post("https://ecom2025-api-ecru.vercel.app/api/register", data);
       // console.log(res.data);
       toast.success(res.data);
+      reset()
     } catch (err) {
       const errMsg = err.response?.data?.message;
       toast.error(errMsg);
@@ -200,7 +202,7 @@ const Register = () => {
                 onClick={handleGoToLogin}
                 className="text-blue-500 focus:outline-none focus:underline hover:underline"
               >
-                Sign up
+                Register
               </button>
               .
             </p>
