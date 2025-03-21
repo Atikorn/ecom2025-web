@@ -16,7 +16,7 @@ const AboutUs = () => {
                 Meet Developer
               </h2>
               <p className="mb-8 max-w-lg text-sm text-gray-500 sm:text-base md:mb-16">
-              Welcome to the developer section! We are students from Rajamangala University of Technology Suvarnabhumi, passionate about web development and modern technology solutions. This e-commerce project is built using React, MySQL, and Prisma, with a focus on creating a seamless and user-friendly shopping experience. Our goal is to develop efficient, well-structured applications that meet real-world needs while ensuring a clean and responsive design. Feel free to explore the site, and if you have any feedback, we’d love to hear it! 🚀✨
+              GGWelcome to the developer section! We are students from Rajamangala University of Technology Suvarnabhumi, passionate about web development and modern technology solutions. This e-commerce project is built using React, MySQL, and Prisma, with a focus on creating a seamless and user-friendly shopping experience. Our goal is to develop efficient, well-structured applications that meet real-world needs while ensuring a clean and responsive design. Feel free to explore the site, and if you have any feedback, we’d love to hear it! 🚀✨
               </p>
             </div>
             <div className="pr-12">
