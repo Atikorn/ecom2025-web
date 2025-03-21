@@ -160,6 +160,7 @@ const Register = () => {
                     // name="password"
                     // id="password"
                     placeholder="Your Password"
+                    type="password"
                     // onChange={''}
                     className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
@@ -180,6 +181,7 @@ const Register = () => {
                     // type="password"
                     // name="password"
                     // id="password"
+                    type="password"
                     placeholder="Confirm Password"
                     // onChange={''}
                     className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -191,7 +193,7 @@ const Register = () => {
 
                 <div className="mt-6">
                   <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 focus:ring focus:ring-indigo-300 focus:ring-opacity-50">
-                    Sign in
+                    Register
                   </button>
                 </div>
               </form>
@@ -202,7 +204,7 @@ const Register = () => {
                 onClick={handleGoToLogin}
                 className="text-blue-500 focus:outline-none focus:underline hover:underline"
               >
-                Register
+                login
               </button>
               .
             </p>
