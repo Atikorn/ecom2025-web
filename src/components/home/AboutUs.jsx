@@ -1,5 +1,5 @@
 import React from "react";
-import pp from "../../image/pp.jpg";
+import pp from "../../image/PP.jpg";
 import aa from "../../image/Aong.jpg";
 import developerPicture from "../../image/10168.png";
 
