@@ -5,7 +5,7 @@ import { LogOut } from "lucide-react";
 import { useState,useEffect } from "react";
 import useEcomstore from "../../store/ecom-store";
 import { toast } from "react-toastify";
-import { UserCheck,Boxes,MonitorCog,ScrollText } from 'lucide-react';
+import { UserCheck,Boxes,MonitorCog,ScrollText,ChartNoAxesCombined ,House } from 'lucide-react';
 
 const Sidebar_admin = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -43,9 +43,22 @@ const Sidebar_admin = () => {
           : "text-gray-500 hover:bg-blue-100 hover:text-blue-500 rounded-md px-4 py-3 flex items-center gap-3"
       }
     >
-      <Gauge size={22} />
+      <House size={22} />
       {isOpen && <span>Home</span>}
     </NavLink>
+
+    <NavLink
+      to={"https://app.powerbi.com/groups/me/reports/8eed79b6-4a2b-4f91-812e-ff5fab4c645a?ctid=324a7ccc-f7db-4150-9c4f-eeec74662c4a&pbi_source=linkShare"}
+      className={({ isActive }) =>
+        isActive
+          ? "bg-blue-500 text-white rounded-md px-4 py-3 flex items-center gap-3"
+          : "text-gray-500 hover:bg-blue-100 hover:text-blue-500 rounded-md px-4 py-3 flex items-center gap-3"
+      }
+    >
+      <ChartNoAxesCombined  size={22} />
+      {isOpen && <span>Report</span>}
+    </NavLink>
+
 
     <NavLink
       to={"manage"}
@@ -82,6 +95,7 @@ const Sidebar_admin = () => {
       <MonitorCog size={22} />
       {isOpen && <span>Product</span>}
     </NavLink>
+    
 
     <NavLink
       to={"orders"}
@@ -94,6 +108,8 @@ const Sidebar_admin = () => {
       <ScrollText size={22} />
       {isOpen && <span>Orders</span>}
     </NavLink>
+
+    
     
   </nav>
 
