@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,navigate } from "react";
 import { getOrdersAdmin, changeOrdersStatus } from "../../api/admin";
 import useEcomStore from "../../store/ecom-store";
 import { toast } from "react-toastify";
 import { numberFormat } from "../../utils/number";
 import moment from 'moment';
+import { useNavigate } from "react-router-dom";
 
 const TableOrders = () => {
+  const actionAdminReceipt = useEcomStore((state) => state.actionAdminReceipt)
   const token = useEcomStore((state) => state.token);
   const [orders, setOrders] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const ordersPerPage = 10;
+  
+  const navigate = useNavigate();
 
   // console.log(orders)
 
@@ -54,6 +58,12 @@ const TableOrders = () => {
   const currentOrders = orders.slice(indexOfFirstOrder, indexOfLastOrder);
   const totalPages = Math.ceil(orders.length / ordersPerPage);
 
+  //Receipt
+  const handleClickReceipt = (item) =>{
+    navigate('/admin/orders/receipt')
+    actionAdminReceipt(item)
+  }
+
   return (
     <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-3xl font-bold text-gray-800 mb-4">Order Management</h2>
@@ -70,6 +80,7 @@ const TableOrders = () => {
               <th className="py-3 px-6">Address</th>
               <th className="py-3 px-6">Status</th>
               <th className="py-3 px-6">Update Status</th>
+              <th className="py-3 px-6">Receipt</th>
             </tr>
           </thead>
           <tbody>
@@ -98,6 +109,9 @@ const TableOrders = () => {
                     <option value="Completed">Completed</option>
                     <option value="Cancelled">Cancelled</option>
                   </select>
+                </td>
+                <td className="text-center">
+                  <button onClick={() =>handleClickReceipt (item)} className="px-4 py-2 bg-indigo-600 text-white rounded-md mx-1">Receipt</button>
                 </td>
               </tr>
             ))}

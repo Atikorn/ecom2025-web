@@ -49,7 +49,7 @@ const FormCategory = () => {
 
   return (
     <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg">
-  <h1 className="text-3xl font-semibold text-gray-800 mb-4">Category Management</h1>
+  <h1 className="text-3xl font-bold text-gray-800 mb-4">Category Management</h1>
 
   {/* Form to add category */}
   <form className="mb-6" onSubmit={handleSubmit}>

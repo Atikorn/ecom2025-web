@@ -9,6 +9,7 @@ import AboutUs from "../components/home/AboutUs";
 import ForgotPassword from "../pages/auth/ForgotPassword";
 import ChangForGotPassword from "../pages/auth/ChangForGotPassword";
 
+
 import History from "../pages/user/History";
 import Checkout from "../pages/Checkout";
 import Login from "../pages/auth/Login";
@@ -29,6 +30,8 @@ import ManageOrders from "../pages/admin/ManageOrders";
 import LayoutOfCart from "../layouts/LayoutOfCart";
 import CategoryList from "../components/Test/CategoryList";
 import Receipt from "../components/card/Receipt";
+import ReceiptAdmin from "../pages/admin/ReceiptAdmin";
+
 // import Model from "../pages/admin/model";
 
 
@@ -84,7 +87,7 @@ const router = createBrowserRouter([
       { path: "product/:id", element: <EditProduct /> },
       { path: "manage", element: <Manage /> },
       { path: "orders", element: <ManageOrders /> },
-      // { path: "model", element: <Model /> },
+      { path: "orders/receipt", element: <ReceiptAdmin /> },
     ],
   },
   {

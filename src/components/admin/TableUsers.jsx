@@ -58,7 +58,7 @@ const TableUsers = () => {
   return (
     <div className="container mx-auto p-6 bg-white shadow-lg rounded-lg">
       <div className="flex justify-between">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-6">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">
           User Management
         </h1>
       </div>

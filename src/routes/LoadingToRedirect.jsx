@@ -6,27 +6,25 @@ import useEcomstore from "../store/ecom-store";
 const LoadingToRedirect = () => {
   const [count, setCount] = useState(3);
   const [redirect, setRedirect] = useState(false);
-  const user = useEcomstore((state) => state.user)
-
-  
+  const user = useEcomstore((state) => state.user);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCount((prevCount) => prevCount - 1);
+      setCount((prevCount) => {
+        if (prevCount <= 1) {
+          clearInterval(interval); // หยุด interval ถ้านับถึง 0
+          setRedirect(true);
+          return 0;
+        }
+        return prevCount - 1;
+      });
     }, 1000);
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
 
-  useEffect(() => {
-    if (count === 0 && user) {
-      setRedirect(true);
-    }
-  }, [count, user]);
-  
-
   if (redirect) {
-    return <Navigate to={"/"} replace={true} />; // ใช้ replace เพื่อไม่ให้กด back แล้วกลับมา
+    return <Navigate to={"/"} replace={true} />; // ใช้ replace เพื่อป้องกันการกด back แล้วกลับมา
   }
 
   return (

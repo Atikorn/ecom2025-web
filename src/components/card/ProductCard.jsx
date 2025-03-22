@@ -1,24 +1,22 @@
-//rafce
-
 import React from "react";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import useEcomstore from "../../store/ecom-store";
 import { numberFormat } from "../../utils/number";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const ProductCard = ({ item }) => {
   const actionAddtoCart = useEcomstore((state) => state.actionAddtoCart);
-  // console.log(item)
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <div className="group relative bg-white border rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-200">
+      <div className="group relative bg-white border rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-200 flex flex-col">
         {/* Image Section */}
-        <div>
+        <div className="w-full">
           {item.images && item.images.length > 0 ? (
             <img
               src={item.images[0].url}
@@ -33,22 +31,20 @@ const ProductCard = ({ item }) => {
         </div>
 
         {/* Product Information */}
-        <div className="mt-4 flex justify-between">
-          <div>
-            <h3 className="text-sm font-semibold text-gray-800 truncate">
-              {item.title}
-            </h3>
-            <p className="mt-1 text-sm text-gray-500 truncate">{item.description}</p>
-          </div>
-          <div className="flex flex-col items-end">
-            <p className="text-sm font-medium text-gray-900">{numberFormat(item.price)}</p>
-            <button
-              onClick={() => actionAddtoCart(item)}
-              className="mt-2 bg-blue-500 text-white rounded-full p-2 shadow-lg transform hover:bg-blue-600 transition duration-300 hover:scale-105"
-            >
-              <ShoppingCart className="w-5 h-5" />
-            </button>
-          </div>
+        <div className="flex-1 mt-4">
+          <h3 className="text-sm font-semibold text-gray-800 truncate">{item.title}</h3>
+          <p className="mt-1 text-sm text-gray-500 line-clamp-2">{item.description}</p>
+        </div>
+
+        {/* Price & Add to Cart */}
+        <div className="mt-auto flex justify-between items-center">
+          <p className="text-sm font-medium text-gray-900">฿{numberFormat(item.price)}</p>
+          <button
+            onClick={() => actionAddtoCart(item)}
+            className="bg-blue-500 text-white rounded-full p-2 shadow-lg hover:bg-blue-600 transition duration-300 hover:scale-105"
+          >
+            <ShoppingCart className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </motion.div>

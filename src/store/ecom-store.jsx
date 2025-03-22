@@ -16,6 +16,7 @@ const ecomStore = (set, get) => ({
   carts: [],
   shipping:{},
   receipt:[],
+  adminreceipt:[],
   method:{},
   
   // modelData: [], //Latest Edited
@@ -31,6 +32,7 @@ const ecomStore = (set, get) => ({
       carts: [],
       shipping:{},
       receipt:[],
+      adminreceipt:[],
       method:{},
       // modelData: [], //Latest Edited
       // modelsByCategory: {}, //Latest Edited
@@ -51,6 +53,10 @@ const ecomStore = (set, get) => ({
     }))
     // console.log(shipping,method)
   },
+  actionAdminReceipt:(adminreceipt)=>{
+    console.log(adminreceipt)
+    set({adminreceipt:adminreceipt})
+      },
   actionSelectedAddress: (selectedAddress) => {
     set({ selectedAddress: selectedAddress });
     // console.log(selectedAddress)

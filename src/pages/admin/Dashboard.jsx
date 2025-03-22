@@ -10,7 +10,7 @@ const Dashboard = () => {
     // </>
     <div className="flex flex-col justify-center items-center h-full bg-gray-100 relative">
       {/* พื้นที่สำหรับรูปพื้นหลัง */}
-      <div
+      {/* <div
         className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{
           backgroundImage:
@@ -19,19 +19,19 @@ const Dashboard = () => {
           backgroundRepeat: "no-repeat", // ป้องกันการทำซ้ำของภาพ
           backgroundPosition: "center center", // จัดกึ่งกลางให้พอดี
         }}
-      ></div>
+      ></div> */}
 
       {/* โลโก้ + ชื่อ */}
       <div className="flex items-center gap-6 z-10 animate-fadeIn">
         <h1 className="text-8xl font-extrabold opacity-80 text-gray-600  drop-shadow-lg">
-          AP ECOMMERCE
+          AP E-COMMERCE
         </h1>
       </div>
 
       {/* GOVERNMENT ข้างล่าง */}
-      <p className="text-7xl font-extrabold opacity-80 text-gray-600  drop-shadow-lg">
+      {/* <p className="text-7xl font-extrabold opacity-80 text-gray-600  drop-shadow-lg">
         GOVERNMENT
-      </p>
+      </p> */}
     </div>
   );
 };

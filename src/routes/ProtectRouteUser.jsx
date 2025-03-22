@@ -9,13 +9,31 @@ const ProtectRouteUser = ({ element }) => {
   const token = useEcomstore((state) => state.token);
 
   useEffect(() => {
+    console.log("User:", user, "Token:", token); // ตรวจสอบค่าที่ได้
+
     if (!user || !token) {
       setOk(false);
       return;
     }
+
+    let timeout = setTimeout(() => {
+      console.warn("Timeout: API is taking too long...");
+      setOk(false);
+    }, 5000);
+
     currentUser(token)
-      .then(() => setOk(true))
-      .catch(() => setOk(false));
+      .then((res) => {
+        console.log("API Response:", res); // ดูค่าที่ API ตอบกลับ
+        clearTimeout(timeout);
+        setOk(true);
+      })
+      .catch((err) => {
+        console.error("API Error:", err); // ดู error ที่เกิดขึ้น
+        clearTimeout(timeout);
+        setOk(false);
+      });
+
+    return () => clearTimeout(timeout);
   }, [user, token]);
 
   if (ok === null) {
