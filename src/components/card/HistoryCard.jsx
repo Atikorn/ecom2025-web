@@ -142,7 +142,7 @@ const HistoryCard = () => {
                             {product.product.title}
                           </td>
                           <td className="py-3 px-4 text-sm text-gray-600">
-                            {numberFormat(product.product.price)}
+                            ฿{numberFormat(product.product.price)}
                           </td>
                           <td className="py-3 px-4 text-sm text-gray-600">
                             {product.count}
@@ -171,7 +171,7 @@ const HistoryCard = () => {
                           </td>
 
                           <td className="py-3 px-4 text-sm font-semibold text-gray-800">
-                            {numberFormat(product.count * product.product.price)}
+                            ฿{numberFormat(product.count * product.product.price)}
                           </td>
                         </tr>
                       );
@@ -186,10 +186,10 @@ const HistoryCard = () => {
                   <button onClick={() => handleClickInvoice(item)} className="px-4 py-2 bg-indigo-600 text-white rounded-md mx-1">View Receipt</button>
                 </div>
                <div>
-                <p className="text-gray-600">Shipping Fee: {numberFormat(item.shippingFee)} THB</p>
-                <p className="text-gray-600">Subtotal</p>
-                <p className="text-2xl font-bold text-gray-800">
-                  {numberFormat(item.cartTotal + item.shippingFee)} THB
+                <p className="text-gray-600 text-right">Shipping Fee: {numberFormat(item.shippingFee)} ฿</p>
+                <p className="text-gray-600 text-right">Subtotal</p>
+                <p className="text-2xl font-bold text-gray-800 text-right">
+                  {numberFormat(item.cartTotal + item.shippingFee)} ฿
                 </p>
                 </div>
               </div>

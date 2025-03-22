@@ -60,13 +60,13 @@ const ListCart = () => {
               <div>
                 <p className="font-bold text-gray-800">{item.title}</p>
                 <p className="text-sm text-gray-600">
-                  {numberFormat(item.price)} x {numberFormat(item.count)}
+                {numberFormat(item.price)} x {numberFormat(item.count)}
                 </p>
               </div>
             </div>
             {/* Right */}
             <div className="font-bold text-blue-500">
-              {numberFormat(item.price * item.count)}
+            ฿{numberFormat(item.price * item.count)}
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ const ListCart = () => {
       <div className="flex justify-between text-lg">
         <span className="text-gray-700">Subtotal</span>
         <span className="text-2xl font-bold text-gray-900">
-          {numberFormat(getTotalPrice())}
+        ฿{numberFormat(getTotalPrice())}
         </span>
       </div>
       <div className="flex flex-col gap-4">

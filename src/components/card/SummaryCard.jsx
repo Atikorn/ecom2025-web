@@ -171,11 +171,11 @@ const SummaryCard = () => {
                 <div>
                   <p className="font-bold text-gray-800">{item.product.title}</p>
                   <p className="text-sm text-gray-600">
-                    Quantity : {item.count} x {numberFormat(item.product.price)}
+                    Quantity : {item.count} x ฿{numberFormat(item.product.price)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-red-500 font-bold">{numberFormat(item.count * item.product.price)}</p>
+                  <p className="text-red-500 font-bold">฿{numberFormat(item.count * item.product.price)}</p>
                 </div>
               </div>
             ))}
@@ -223,7 +223,7 @@ const SummaryCard = () => {
 
             <div className="flex justify-between text-lg font-bold text-gray-800">
               <p>Total Amount:</p>
-              <p className="text-red-500 text-xl">{numberFormat(cartTotal + shippingFee)}</p>
+              <p className="text-red-500 text-xl">฿{numberFormat(cartTotal + shippingFee)}</p>
             </div>
 
             <hr className="border-gray-300" />

@@ -32,7 +32,7 @@ const Receipt = () => {
         className="bg-white border rounded-lg shadow-lg px-6 py-6 max-w-md mx-auto"
       >
         <h1 className="font-bold text-2xl my-4 text-center text-indigo-600">
-          AP Ecommerce
+          AP E-commerce
         </h1>
         <hr className="mb-2" />
         <div className="flex justify-between mb-6">
@@ -61,19 +61,19 @@ const Receipt = () => {
             {receipt?.products?.map((item, index) => (
               <tr key={index}>
                 <td className="text-left text-gray-700">Product : {item.product.title}</td>
-                <td className="text-right text-gray-700">{numberFormat(item.price)}</td>
+                <td className="text-right text-gray-700">฿ {numberFormat(item.price)}</td>
               </tr>
             ))}
             <tr>
               <td className="text-left text-gray-700">Shipping Fee : {receipt?.method}</td>
-              <td className="text-right text-gray-700">{numberFormat(receipt?.shippingFee || 0)}</td>
+              <td className="text-right text-gray-700">฿ {numberFormat(receipt?.shippingFee || 0)}</td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td className="text-left font-bold text-gray-700">Total</td>
               <td className="text-right font-bold text-gray-700">
-                {numberFormat(receipt.cartTotal + receipt.shippingFee)}
+                ฿ {numberFormat(receipt.cartTotal + receipt.shippingFee)}
               </td>
             </tr>
           </tfoot>
