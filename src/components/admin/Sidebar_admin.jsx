@@ -48,13 +48,15 @@ const Sidebar_admin = () => {
     </NavLink>
 
     <NavLink
-      to={"https://app.powerbi.com/groups/me/reports/8eed79b6-4a2b-4f91-812e-ff5fab4c645a?ctid=324a7ccc-f7db-4150-9c4f-eeec74662c4a&pbi_source=linkShare"}
-      className={({ isActive }) =>
-        isActive
-          ? "bg-blue-500 text-white rounded-md px-4 py-3 flex items-center gap-3"
-          : "text-gray-500 hover:bg-blue-100 hover:text-blue-500 rounded-md px-4 py-3 flex items-center gap-3"
-      }
-    >
+  to={"https://app.powerbi.com/groups/me/reports/8eed79b6-4a2b-4f91-812e-ff5fab4c645a?ctid=324a7ccc-f7db-4150-9c4f-eeec74662c4a&pbi_source=linkShare"}
+  className={({ isActive }) =>
+    isActive
+      ? "bg-blue-500 text-white rounded-md px-4 py-3 flex items-center gap-3"
+      : "text-gray-500 hover:bg-blue-100 hover:text-blue-500 rounded-md px-4 py-3 flex items-center gap-3"
+  }
+  target="_blank" // เปิดลิงก์ในแท็บใหม่
+  rel="noopener noreferrer" // เพิ่มความปลอดภัย
+>
       <ChartNoAxesCombined  size={22} />
       {isOpen && <span>Report</span>}
     </NavLink>

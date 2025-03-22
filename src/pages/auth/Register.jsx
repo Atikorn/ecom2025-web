@@ -76,6 +76,7 @@ const Register = () => {
       // console.log(res.data);
       toast.success(res.data);
       reset()
+      navigate("/login")
     } catch (err) {
       const errMsg = err.response?.data?.message;
       toast.error(errMsg);
