@@ -35,7 +35,7 @@ const ContentSwipe = () => {
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            The Latest Tech is Here
+            Test P The Latest Tech is Here
             </h1>
             <p className="mt-4 text-xl text-gray-500">
             Upgrade your gear with our newest IT collection, designed to boost your productivity, gaming, and everyday life like never before.
